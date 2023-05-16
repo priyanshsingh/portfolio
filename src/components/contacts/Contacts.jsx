@@ -56,7 +56,9 @@ const Contacts = () => {
           <textarea name="message" rows="7" placeholder='Your Message' required ></textarea>
           <button type='submit' className='btn btn-primary'>Send</button>
         </form>
+        <a href="#top" className='scroll__up'>Scroll Up</a>
       </div>
+
     </section>
   )
 }

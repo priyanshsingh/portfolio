@@ -1,0 +1,71 @@
+.App {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+  }
+  
+  .App-header {
+    grid-column: 1 / span 2;
+    text-align: center;
+  }
+  
+  .header__heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .input__button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #999;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .container {
+    grid-column: 2;
+    text-align: left;
+  }
+  
+  .container__name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .container__temp {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .container__desc {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .container__desc__small {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+  }
+  

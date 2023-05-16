@@ -1,7 +1,22 @@
 .container.testimonials__container{
     width: 40%;
     padding-bottom: 1rem;
+    opacity: 0.8;
+    border-radius: 20px 20px;    
 }
+.container.testimonials__container:hover{
+    transition: var(--transition);
+    /* background: var(--color-bg-variant); */
+    opacity: 1;    
+}
+.slide__text{
+    position: absolute;
+    right: -2.3rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+}
+
 
 .tech_avatar{
     width: 50%;
@@ -29,7 +44,7 @@
     width: 100%;
     height: 100%;
 }
-  
+
 
 .swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal{
     background: var(--color-primary);

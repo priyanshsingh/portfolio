@@ -48,18 +48,21 @@ const Testimonials = () => {
         }}
         navigation={true}
         modules={[Pagination]}
-        >
+      >
 
         {
           data.map(({ image, name, desc }, index) => {
             return (
-              <SwiperSlide key={index} className='testimonial'>
-                <div className="tech_avatar">
-                  <img src={image} alt="" />
-                </div>
-                <h5 className='tech__name'>{name}</h5>
-                <small className='tech__desc'>{desc}</small>
-              </SwiperSlide>
+              <>
+                <SwiperSlide key={index} className='testimonial'>
+                  <p className='slide__text'>Swipe to Slide</p>
+                  <div className="tech_avatar">
+                    <img src={image} alt="" />
+                  </div>
+                  <h5 className='tech__name'>{name}</h5>
+                  <small className='tech__desc'>{desc}</small>
+                </SwiperSlide>
+              </>
             )
 
           })

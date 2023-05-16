@@ -8,13 +8,15 @@ import Portfolio from './components/portfolio/Portfolio'
 import Testimonials from './components/testimonial/Testimonials'
 import Contact from './components/contacts/Contacts'
 import Footer from './components/footer/Footer'
+// import Weather from './components/weather/Weather'
 import './index.css'
 
 const App = () => {
   return (
     <>
       <Header/> 
-      <Nav/> 
+      {/* <Weather /> */}
+      <Nav/>
       <About/> 
       <div class="horizontal-bar"></div>
       <Experience/> 

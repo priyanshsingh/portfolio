@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 30% 58%;
     gap: 12%;
+    position: relative;
 }
 
 .contact__options{
@@ -36,6 +37,13 @@
     font-size: 0.8rem;
 }
 
+.scroll__up{
+    position: absolute;
+    right: -9.9rem;
+    bottom: 3rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+}
 
 /* ===============FORM CSS==================== */
 
