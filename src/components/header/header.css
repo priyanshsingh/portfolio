@@ -1,6 +1,6 @@
 header{
     height: 100vh;
-    padding-top: 7rem;
+    padding-top: 2rem;
     overflow: hidden;
 }
 
@@ -8,6 +8,16 @@ header{
     text-align: center;
     height: 100%;
     position: relative;
+    cursor: default;
+
+    /* transition: var(--transition); */
+
+}
+
+.hover__mern:hover{
+    transition: var(--transition);
+    color: var(--color-white);
+    cursor: default;
 }
 
 
@@ -47,7 +57,7 @@ header{
     height: 28rem;
     position: absolute;
     left: calc(50% - 11rem);
-    margin-top: 4rem;
+    margin-top: 2rem;
     border-radius: 12rem 8rem 4rem 4rem ;
     overflow: hidden;
     padding: 3rem 0.5rem 0.5rem 0.5rem;
