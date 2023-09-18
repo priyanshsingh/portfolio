@@ -1,5 +1,5 @@
 nav{
-    background: rgba(152, 152, 152, 0.3);
+    background: rgba(0, 0, 0, 0.3);
     width: max-content;
     display: block;
     padding: 0.7rem 1.7rem;
@@ -22,7 +22,7 @@ nav a{
     display: flex;
     color: var(--color-light);
     font-size: 1.1rem;
-    position: relative;
+    /* position: relative; */
 }
 
 nav a:hover{
@@ -56,3 +56,25 @@ nav a.active{
     translate: 0 -25px 0;
     opacity: 1;
   }
+
+  
+/* =========== MEDIA QUERIES (MEDIUM DEVICES) =========== */
+
+@media screen and (max-width: 1024px) {
+    nav{
+        position: fixed;
+        left: 50%;
+
+    }
+}
+
+/* =========== MEDIA QUERIES (SMALL DEVICES) =========== */
+
+@media screen and (max-width: 600px) {
+
+    nav{
+        position: fixed;
+        left: 38%;
+
+    }
+}
