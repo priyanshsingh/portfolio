@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react'
+import React, { useState } from 'react'
 import './contacts.css'
 import { MdOutlineEmail } from 'react-icons/md'
 import { FaInstagram } from 'react-icons/fa'
@@ -10,18 +10,37 @@ import emailjs from 'emailjs-com'
 
 const Contacts = () => {
   const form = useRef();
+  const [toast, setToast] = useState({ visible: false, kind: 'success', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const showToast = (message, kind = 'success') => {
+    setToast({ visible: true, kind, message })
+    setTimeout(() => setToast((t) => ({ ...t, visible: false })), 3000)
+  }
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (isSubmitting) return
+    setIsSubmitting(true)
 
-    emailjs.sendForm('service_i79cze1', 'template_xhpo8fd', form.current, 'ZSWxXzfGS-QpgE8TV')
+    emailjs
+      .sendForm('service_i79cze1', 'template_xhpo8fd', form.current, 'ZSWxXzfGS-QpgE8TV')
       .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-
-    e.currentTarget.reset()
+        if (result && Number(result.status) === 200) {
+          showToast('Message sent', 'success')
+        } else {
+          showToast('Failed to send', 'error')
+        }
+      })
+      .catch(() => {
+        showToast('Failed to send', 'error')
+      })
+      .finally(() => {
+        setIsSubmitting(false)
+        if (form.current) {
+          form.current.reset()
+        }
+      })
   };
 
 
@@ -54,9 +73,20 @@ const Contacts = () => {
           <input type="text" name='name' placeholder='Your Full Name' required />
           <input type="email" name='email' placeholder='Your Email ID' required />
           <textarea name="message" rows="7" placeholder='Your Message' required ></textarea>
-          <button type='submit' className='btn btn-primary'>Send</button>
+          <button type='submit' className='btn btn-primary' disabled={isSubmitting}>
+            {isSubmitting ? 'Sending…' : 'Send'}
+          </button>
         </form>
         <a href="#top" className='scroll__up'>Scroll Up</a>
+        {toast.visible && (
+          <div className="toast__backdrop" aria-hidden />
+        )}
+        {toast.visible && (
+          <div className={`toast ${toast.kind === 'success' ? 'toast--success' : 'toast--error'}`}>
+            <span className="toast__icon" aria-hidden />
+            <span className="toast__message">{toast.message}</span>
+          </div>
+        )}
       </div>
 
     </section>
