@@ -2,13 +2,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
+    grid-auto-rows: 1fr;
 }
 
 .service{
     background: var(--color-bg-variant);
     border-radius: 0 0 2rem 2rem;
     border: 1px solid var(--color-primary);
-    height: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: var(--transition);
 }
 
@@ -39,13 +42,18 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 0.8rem;
+    align-items: flex-start;
 }
 
 
 .service__list-icon{
     color: var(--color-primary);
     margin-top: 2px;
-    font-size: 2rem;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    flex: 0 0 18px;
 }
 
 .list__icon{

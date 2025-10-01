@@ -30,6 +30,10 @@
     text-align: center;
     padding: 2rem;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 520px;
 }
 
 .tech__desc{
@@ -66,5 +70,8 @@
     }
     .tech__desc{
         width: var(--container-width-sm);
+    }
+    .testimonial{
+        min-height: 560px;
     }
 }
